@@ -1,4 +1,3 @@
-
 // Función para cargar un componente HTML en un contenedor
 function loadComponent(containerId, componentPath) {
     fetch(componentPath)
@@ -12,3 +11,4 @@ function loadComponent(containerId, componentPath) {
 // Cargar el componente header.html
 loadComponent('header-container', './src/components/header.html');
 loadComponent('home-container', './src/home.html');
+loadComponent('contactUs-container', './src/contacts.html');
