@@ -1,0 +1,49 @@
+.technologies-section {
+    background-color: #1c1b22;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.technologies-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+    gap: 2rem;
+    justify-items: center;
+}
+
+.tech-card {
+    background-color: #2b2a33;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 300px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    color: #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.tech-card img {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.tech-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.tech-card .author {
+    font-weight: bold;
+    color: #888;
+    font-size: 0.85rem;
+}
