@@ -1,0 +1,126 @@
+
+/* General styles for the header */
+header {
+    background-color: #413e3e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    flex: 1;
+    margin-right: auto; /* Asegura que el logo esté alineado a la izquierda */
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    width: 120px;
+    border-radius: 1rem;
+    height: 80px;
+}
+
+/* Hamburger menu styles */
+.menu {
+    position: absolute;
+    text-align: center;
+    top: calc(83px); /* Ajusta el menú para que comience justo debajo del header */
+    right: 0; /* Alinea el menú desplegable a la derecha */
+    width: 100%; /* Puedes ajustar el ancho si es necesario */
+    padding: 1rem 0; /* Ajusta el padding para que no sea demasiado grande */
+    margin: 0;
+    background-color: #6d6969;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.menu li {
+    margin-bottom: 1.5rem;
+}
+
+.menu a {
+    color: #e3dede;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #0077c0;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon span:before,
+.menu-icon span:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon span:before {
+    top: -8px;
+}
+
+.menu-icon span:after {
+    top: 8px;
+}
+
+/* Checkbox toggle for the menu */
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon span {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon span:before {
+    transform: rotate(-90deg);
+    top: 0;
+}
+
+#menu-toggle:checked + .menu-icon span:after {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+#menu-toggle:checked ~ .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
