@@ -71,6 +71,8 @@
     margin: 0 auto;
 }
 
+
+
 /* Controles del carrusel */
 .carousel-controls {
     display: flex;
@@ -78,6 +80,8 @@
     gap: 10px;
     margin-top: 10px;
 }
+
+
 
 carousel-controls button {
     background-color: #333;
@@ -100,6 +104,7 @@ carousel-controls button {
     display: flex;
     flex-direction: column;
 }
+
 
 
 /* Pantalla para escritorio */
