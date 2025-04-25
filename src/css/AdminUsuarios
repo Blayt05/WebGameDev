@@ -1,0 +1,86 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-left h1 {
+    font-size: 2em;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right button,
+.header-right input {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.create-button {
+    background-color: #6f4cff;
+    color: white;
+}
+
+.search-button {
+    background-color: #4c3d9d;
+    color: white;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #6f4cff;
+    border-radius: 5px;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #6f4cff;
+}
+
+tr:nth-child(even) {
+    background-color: #3e3e3e;
+}
+
+tr:hover {
+    background-color: #555555;
+}
