@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Admin</title>
+    <link rel="stylesheet" href="/src/css/homeAdmin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="sidebar" id="sidebar">
+            <button class="toggle-btn" id="toggle-btn">☰</button>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">🏠</span>
+                        <span class="title">Página Principal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">👤</span>
+                        <span class="title">Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">⭐</span>
+                        <span class="title">Favoritos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">🗑️</span>
+                        <span class="title">Papelera</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">⚙️</span>
+                        <span class="title">Configuración</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="top-bar">
+                <button class="notification-btn" id="notification-btn">🔔</button>
+                <div class="notification-panel" id="notification-panel">
+                    <ul>
+                        <li class="message" data-from="User1" id-message="Este es el mensaje 1">
+                            <span>From: User1</span>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                        </li>
+                        <li class="message" data-from="User2" id-message="Este es el mensaje 2">
+                            <span>From: User2</span>
+                            <p>Consectetur adipiscing elit...</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h1>Bienvenido, Juan</h1>
+            <p>We are happy to have you back</p>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" id="close-btn">✖</button>
+            <h3>From: <span id="popup-from"></span></h3>
+            <p>Message: <span id="popup-message"></span></p>
+        </div>
+    </div>
+    <script src="/src/js/homeAdmin.js"></script>
+</body>
+</html>
