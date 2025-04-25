@@ -1,0 +1,176 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2f2f2f; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del formulario de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Caja de login */
+.login-box {
+    background-color: #333; /* Fondo oscuro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #aaa; /* Texto gris */
+    margin-bottom: 20px;
+}
+
+/* Estilos de los campos de entrada */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #ccc;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Checkbox de términos y condiciones */
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms input {
+    margin-right: 5px;
+}
+
+/* Botón de login */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c63ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-btn:hover {
+    background-color: #5a55e0;
+}
+
+/* Divider */
+.divider {
+    color: #aaa;
+}
+
+.divider span {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* Botón de login con Google */
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f1f1f1;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.google-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.google-logo {
+    width: 20px;
+}
+
+/* Enlace de registro */
+.register-link {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.checkboxU {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #444;
+    border: 2px solid #555;
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkboxU:checked {
+    background-color: #6c63ff; /* Color cuando está marcado */
+    border-color: #6c63ff; /* Color del borde cuando está marcado */
+}
+
+.checkboxU:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px; /* Ajusta la posición del check */
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out; /* Suaviza la transición de visibilidad */
+    opacity: 1; /* Muestra el check cuando está marcado */
+
+}
