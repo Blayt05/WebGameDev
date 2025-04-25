@@ -13,3 +13,4 @@ function loadComponent(containerId, componentPath) {
 loadComponent('header-container', './src/components/header.html');
 loadComponent('home-container', './src/home.html');
 loadComponent('Tecnologies-container', './src/Tecnologies.html');
+loadComponent('footer-container', './src/components/footer.html');
