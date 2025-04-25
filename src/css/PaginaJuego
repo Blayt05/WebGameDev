@@ -1,0 +1,48 @@
+.portada{
+  float: right;
+  width: 300px;
+  height: 350px;
+  
+}
+.button_container {
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+
+.button {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  display: block;
+  background-color: #063806;
+  text-decoration: none;
+  text-align: justify;
+  text-transform: uppercase;
+  font-family: Tahoma;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.5s; 
+  cursor: pointer;
+  
+}
+
+
+/* Estilo cuando pasas el ratón por encima */
+.button:hover {
+  background-color: #3b7e42; /* Cambio de color al pasar el ratón */
+}
+
+
+body {
+  background-color:#1A001F
+}
+
+h1 {
+  color: white;
+  font-family: Tahoma;
+  font-weight: bold;
+  text-align: center;
+}
