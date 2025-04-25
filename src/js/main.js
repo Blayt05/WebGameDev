@@ -12,3 +12,4 @@ function loadComponent(containerId, componentPath) {
 loadComponent('header-container', './src/components/header.html');
 loadComponent('home-container', './src/home.html');
 loadComponent('contactUs-container', './src/contacts.html');
+loadComponent('gamepage-container', './src/gamepage.html');

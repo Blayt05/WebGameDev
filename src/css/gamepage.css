@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #23232b;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Header */
+  .main-header {
+    background-color: #23232b;
+    padding: 20px 0 0 0;
+    text-align: center;
+  }
+  
+  .main-header h1 {
+    font-family: 'Bevan', cursive;
+    font-weight: normal;
+    font-size: 4rem;
+    margin-bottom: 12px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Fila acceso */
+  .access-row {
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 32px;
+  }
+  
+  /* Imagen zombie */
+  .zombie-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 4px solid #7bc96f;
+    object-fit: cover;
+    background-color: #7bc96f;
+  }
+  
+  /* Texto acceso */
+  .access-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000000;
+    margin-left: 20px;
+  }
+  
+  /* Flecha */
+  .arrow {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .arrow img {
+    width: 250px;
+    height: auto;
+  }
+  
+  /* Botón */
+  .play-btn {
+    background-color: #3b3b3b;
+    color: #4b00ff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 14px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .play-btn:hover {
+    background-color: #4b00ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Imagen principal */
+  .game-img {
+    flex: 0 0 70%;
+  }
+  
+  .game-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Scoreboard */
+  .scoreboard {
+    flex: 0 0 30%;
+    background-color: #246c2e;
+    padding: 16px 24px;
+    color: white;
+    border: 2px solid #7bc96f;
+    border-radius: 0 0 15px 0;
+  }
+  
+  .scoreboard h2 {
+    font-family: 'Georgia', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+  }
+  
+  .scoreboard ul {
+    list-style: none;
+  }
+  
+  .scoreboard li {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+  }
+  
+  .scoreboard li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
