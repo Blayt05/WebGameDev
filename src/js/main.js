@@ -12,3 +12,5 @@ function loadComponent(containerId, componentPath) {
 // Cargar el componente header.html
 loadComponent('header-container', './src/components/header.html');
 loadComponent('home-container', './src/home.html');
+loadComponent('aboutUs-container', './src/about.html');
+loadComponent('ourTeam-container', './src/OurTeam.html');
