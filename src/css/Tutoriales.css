@@ -1,0 +1,86 @@
+.tutoriales-faq {
+    background-color: #16151a;
+    padding: 40px 60px;
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .tutoriales-faq h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .tutoriales-grid {
+    display: flex;
+    flex-wrap: wrap; /* permite que se colapsen */
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  
+  .tutorial-box {
+    background-color: #24232b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(25% - 20px); /* 4 por fila con margen */
+    max-width: calc(25% - 20px);
+    min-width: 220px;
+    box-sizing: border-box;
+  }
+  
+  .tutorial-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .tutorial-box h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Buscador */
+  .faq-search {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-style: italic;
+    background-color: #2d2c34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ items */
+  .faq-item {
+    background-color: #e0e0e0;
+    color: black;
+    padding: 15px;
+    font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 1024px) {
+    .tutorial-box {
+      flex: 1 1 calc(50% - 20px); /* 2 por fila */
+      max-width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .tutorial-box {
+      flex: 1 1 100%; /* 1 por fila */
+      max-width: 100%;
+    }
+  }
+  

@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Header</title>
+  <link rel="stylesheet" href="src/css/style.css" />
 </head>
 <body>
-    <div class="fondo">
-        <!-- Logo de la pagina -->
-        <div>
 
-        </div>
+  <header>
+    <nav class="contenedor">
+      <!-- Logo -->
+      <div a="#home" class="logo">
+        <img src="src/img/logo.png" alt="Logo del banco" />
+      </div>
 
-        <!-- Menu de Hamburguesa -->
-        <header>
-            <nav>
-                <div class="contenedor">
+      <!-- Menu para escritorio -->
+      <ul class="menu desktop">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
 
-                    <!-- Logo a la izquierda -->
-                    <div class="logo">
-                        <img src="src/img/logo.png" alt="Logo del banco">
-                    </div>
+      <!-- Botón Play para escritorio -->
+      <div class="play-button desktop">
+        <a href="#" class="btn-play">Play</a>
+      </div>
 
-                    <!-- Menu de hamburguesa a la derecha -->
-                    <input type="checkbox" id="menu-toggle">
-                    <label for="menu-toggle" class="menu-icon">
-                        <span></span>
-                    </label>
-                    <ul class="menu">
-                        <li><a href="#">Play</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        
-        
+      <!-- Menú hamburguesa para móvil -->
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+      </label>
 
-    </div>
+      <!-- Menú para móvil -->
+      <ul class="menu mobile">
+        <li><a href="#">Play</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
 </body>
 </html>

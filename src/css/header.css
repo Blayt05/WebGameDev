@@ -1,74 +1,75 @@
-
-/* General styles for the header */
-header {
-    background-color: #413e3e;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    
-}
-
-.logo {
-    flex: 1;
-    margin-right: auto; /* Asegura que el logo esté alineado a la izquierda */
-}
-
-.contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo img {
-    width: 120px;
-    border-radius: 1rem;
-    height: 80px;
-}
-
-/* Hamburger menu styles */
-.menu {
-    position: absolute;
-    text-align: center;
-    top: calc(83px); /* Ajusta el menú para que comience justo debajo del header */
-    right: 0; /* Alinea el menú desplegable a la derecha */
-    width: 100%; /* Puedes ajustar el ancho si es necesario */
-    padding: 1rem 0; /* Ajusta el padding para que no sea demasiado grande */
+/* Reset básico */
+* {
     margin: 0;
-    background-color: #6d6969;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-.menu li {
-    margin-bottom: 1.5rem;
-}
-
-.menu a {
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  header {
+    background-color: #413e3e;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor nav */
+  nav.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 120px;
+    height: 80px;
+    border-radius: 1rem;
+  }
+  
+  /* Menú común */
+  .menu {
+    list-style: none;
+  }
+  
+  .menu li {
+    margin: 1rem 0;
+  }
+  
+  .menu a {
     color: #e3dede;
-    font-size: 1.2rem;
     text-decoration: none;
-}
-
-.menu a:hover {
+    font-size: 1.2rem;
+  }
+  
+  .menu a:hover {
     color: #0077c0;
-}
-
-/* Hamburger menu icon */
-.menu-icon {
-    display: block;
-    cursor: pointer;
+  }
+  
+  /* Botón de Play */
+  .btn-play {
+    padding: 0.6rem 1rem;
+    background-color: #0077c0;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Menu-icon para móvil */
+  .menu-icon {
+    display: none;
     width: 40px;
     height: 40px;
     position: relative;
-}
-
-.menu-icon span {
+    cursor: pointer;
+  }
+  
+  .menu-icon span {
     display: block;
     width: 25px;
     height: 3px;
@@ -77,11 +78,10 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu-icon span:before,
-.menu-icon span:after {
+  }
+  
+  .menu-icon span::before,
+  .menu-icon span::after {
     content: '';
     display: block;
     width: 25px;
@@ -89,38 +89,90 @@ nav {
     background-color: #ffffff;
     position: absolute;
     left: 0;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu-icon span:before {
+    transition: 0.3s;
+  }
+  
+  .menu-icon span::before {
     top: -8px;
-}
-
-.menu-icon span:after {
+  }
+  
+  .menu-icon span::after {
     top: 8px;
-}
-
-/* Checkbox toggle for the menu */
-#menu-toggle {
+  }
+  
+  #menu-toggle {
     display: none;
-}
-
-#menu-toggle:checked + .menu-icon span {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#menu-toggle:checked + .menu-icon span:before {
-    transform: rotate(-90deg);
-    top: 0;
-}
-
-#menu-toggle:checked + .menu-icon span:after {
-    transform: rotate(90deg);
-    top: 0;
-}
-
-#menu-toggle:checked ~ .menu {
+  }
+  
+  /* Menú para móvil oculto */
+  .menu.mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #6d6969;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Mostrar menú móvil al activar toggle */
+  #menu-toggle:checked ~ .menu.mobile {
     opacity: 1;
     visibility: visible;
+  }
+  
+  /* Transformar ícono hamburguesa al abrir */
+  #menu-toggle:checked + .menu-icon span {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  #menu-toggle:checked + .menu-icon span::before {
+    transform: rotate(-90deg);
+    top: 0;
+  }
+  
+  #menu-toggle:checked + .menu-icon span::after {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  
+  /* === Responsive Design === */
+  
+  /* Escritorio */
+  @media (min-width: 768px) {
+    .menu.desktop {
+      display: flex;
+      gap: 2rem;
+    }
+  
+    .play-button.desktop {
+      display: block;
+    }
+  
+    .menu.mobile,
+    .menu-icon {
+      display: none;
+    }
+  
+    .menu li {
+      margin: 0;
+    }
+  }
+  
+  /* Móvil */
+  @media (max-width: 767px) {
+    .menu.desktop,
+    .play-button.desktop {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+html {
+    scroll-behavior: smooth;
 }
-

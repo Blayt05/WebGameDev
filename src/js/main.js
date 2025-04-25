@@ -15,3 +15,4 @@ loadComponent('aboutUs-container', './src/about.html');
 loadComponent('ourTeam-container', './src/OurTeam.html');
 loadComponent('Technologies-container', './src/Tecnologies.html');
 loadComponent('contactUs-container', './src/contacts.html');
+loadComponent('footer-container', './src/components/Footer.html');
