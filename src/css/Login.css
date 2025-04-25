@@ -1,36 +1,63 @@
-/* Reset general */
-* {
+
+/* Fondo animado */
+.body-login {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    height: 90vh;
+    background: linear-gradient(-45deg, #6c63ff, #ff6f61, #6cffd0, #ff63c3);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
 }
 
-/* Body general */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #2f2f2f; /* Fondo oscuro */
-    color: white; /* Texto blanco */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
+/* Estilo del ícono del juego */
+.login-header {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.game-icon {
+    width: 100px; /* Ajusta el tamaño del ícono */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    border-radius: 2rem;
+
+}
+
+.game-icon:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+}
+
 
 /* Contenedor del formulario de login */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 77vh;
+    margin: 0;
 }
 
 /* Caja de login */
 .login-box {
     background-color: #333; /* Fondo oscuro */
-    padding: 40px;
+    padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
     text-align: center;
 }
 
@@ -173,4 +200,56 @@ p {
     transition: opacity 0.3s ease-in-out; /* Suaviza la transición de visibilidad */
     opacity: 1; /* Muestra el check cuando está marcado */
 
+}
+
+/* Contenedor de frases animadas */
+.background-quotes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Asegura que esté detrás del formulario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Evita que interfiera con los clics */
+}
+
+.background-quotes span {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.2); /* Texto translúcido */
+    position: absolute;
+    animation: moveQuotes 10s linear infinite;
+    white-space: nowrap;
+}
+
+.background-quotes span:nth-child(1) {
+    top: 20%;
+    left: -100%;
+    animation-delay: 0s;
+}
+
+.background-quotes span:nth-child(2) {
+    top: 50%;
+    left: -100%;
+    animation-delay: 3s;
+}
+
+.background-quotes span:nth-child(3) {
+    top: 80%;
+    left: -100%;
+    animation-delay: 6s;
+}
+
+/* Animación de movimiento */
+@keyframes moveQuotes {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%);
+    }
 }
