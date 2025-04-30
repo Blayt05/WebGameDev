@@ -16,12 +16,10 @@ html.leaderboard, body.leaderboard {
 
 .leaderboard {
   width: 100%;
-  background: #070838;
+  background: #03041c;
   border-radius: 15px;
   padding: 20px;
-  align-items: center;
-  justify-content: center;
-
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .title {
@@ -45,13 +43,31 @@ html.leaderboard, body.leaderboard {
   align-items: center;
 }
 
-.podium-member img {
+.podium-member1 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 5px solid #472904;
+}
+
+.podium-member2 img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 5px;
   border: 5px solid gold;
+}
+
+.podium-member3 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 5px solid silver;
 }
 
 .rankings {
