@@ -1,9 +1,8 @@
-
 /* Fondo animado */
 .body-login {
     margin: 0;
     height: 90vh;
-    background: linear-gradient(-45deg, #6c63ff, #ff6f61, #6cffd0, #ff63c3);
+    background: linear-gradient(-45deg, #1c1c1c, #8b0000, #1db954, #2b2b2b);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
 }
@@ -23,8 +22,9 @@
 /* Estilo del ícono del juego */
 .login-header {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 0;
     margin-bottom: 0;
+    padding-top: 5px;
 }
 
 .game-icon {
@@ -32,22 +32,20 @@
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-radius: 2rem;
-
 }
 
 .game-icon:hover {
     transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
 }
 
-
 /* Contenedor del formulario de login */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 77vh;
+    height: 51vh;
     margin: 0;
 }
 
@@ -107,10 +105,20 @@ p {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    /* Agregando texto a la izquierda como en imagen 2 */
+    text-align: left;
 }
 
 .terms input {
-    margin-right: 5px;
+    margin-right: 10px;
+}
+
+.terms label {
+    color: #ccc;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    line-height: 20px; /* Ajustar a la altura del checkbox */
 }
 
 /* Botón de login */
@@ -132,12 +140,37 @@ p {
 
 /* Divider */
 .divider {
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
     color: #aaa;
+}
+
+/* Agregando líneas al divisor */
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background-color: #555;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
 }
 
 .divider span {
     font-size: 15px;
-    margin-bottom: 5px;
+    padding: 0 10px;
+    background-color: #333;
+    position: relative;
+    z-index: 1;
 }
 
 /* Botón de login con Google */
@@ -190,6 +223,9 @@ p {
     cursor: pointer;
     appearance: none;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
 }
 
 .checkboxU:checked {
@@ -208,7 +244,6 @@ p {
     opacity: 0; /* Inicialmente invisible */
     transition: opacity 0.3s ease-in-out; /* Suaviza la transición de visibilidad */
     opacity: 1; /* Muestra el check cuando está marcado */
-
 }
 
 /* Contenedor de frases animadas */
