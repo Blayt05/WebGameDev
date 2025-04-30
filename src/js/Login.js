@@ -54,8 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: 'Success!',
                 text: data.message || 'Login successful!'
             }).then(() => {
-                // Redirigir después del login exitoso
-                window.location.href = "/GamePage.html"; // o donde tú quieras
+                // Redirigir basado en el rol
+                if (data.role === 'admin') {
+                    window.location.href = "/homeAdmin.html"; // o donde tú quieras
+                } else {
+                    window.location.href = "/GamePage.html";
+                }
             });
         })
         .catch(error => {
