@@ -16,3 +16,4 @@ loadComponent('ourTeam-container', './src/OurTeam.html');
 loadComponent('Technologies-container', './src/Tecnologies.html');
 loadComponent('contactUs-container', './src/contacts.html');
 loadComponent('footer-container', './src/components/footer.html');
+loadComponent('GamePage-container', './src/components/GamepageBar.html');
