@@ -6,12 +6,10 @@
   <title>Java Leaderboard</title>
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
-<body>
-
+<body class="leaderboard">
 <div class="leaderboard">
   <div class="title">Untoten Natch<br> Leaderboard</div>
   <!-- Contenedor del html de la pagina de Barra Desplegable GamePage -->
-  <div id="GamePage-container"></div>    
   <div class="podium">
     <div class="podium-member">
       <img src="https://i.ibb.co/q3XGvdb0/FotoBooz.jpg" alt="Jackson">
@@ -38,9 +36,22 @@
     <div class="ranking-item"><span>104. Sebastian</span><span>649</span></div>
   </div>
 
+  <div class="overlay-message">
+    <div class="menu-trigger">Menu</div>
+    <div class="menu-content">
+      <div class="icono-perfil"></div>
+      <span>Perfil</span>
+      <a href="GamePage.html" class="menu-item">🎮 Play</a>
+      <a href="#" class="menu-item">👥 Social</a>
+      <a href="leaderboard.html" class="menu-item">📊 Scoreboard</a>
+      <a href="Tutoriales.html" class="menu-item">❓ FAQs</a>
+      <a href="#" class="menu-item">⚙️ Settings</a>
+      <button class="logout">⏎ Logout</button>
+    </div>
+  </div>
+  
   <div class="copyright">Copyright 2025</div>
 </div>
 <script src="/src/js/main.js"></script>
-
 </body>
 </html>
