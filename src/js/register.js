@@ -41,3 +41,5 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         alert(error.message);
     });
 });
+
+//Comment
