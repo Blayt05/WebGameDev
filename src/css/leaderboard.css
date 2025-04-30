@@ -1,6 +1,6 @@
 html.leaderboard, body.leaderboard {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   background-color: #1e1c27;
   display: flex;
   justify-content: center;
@@ -15,11 +15,13 @@ html.leaderboard, body.leaderboard {
 }
 
 .leaderboard {
-  width: 100%;
-  background: #1b491a;
+  width: 80%;
+  background: #070838;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+
 }
 
 .title {
