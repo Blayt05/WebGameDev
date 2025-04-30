@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        fetch('https://localhost:7159/api/Login', {  // Asegúrate que sea tu puerto correcto
+        fetch('https://localhost:7141/api/Login', {  // Asegúrate que sea tu puerto correcto
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 text: data.message || 'Login successful!'
             }).then(() => {
                 // Redirigir después del login exitoso
-                window.location.href = "/dashboard.html"; // o donde tú quieras
+                window.location.href = "/GamePage.html"; // o donde tú quieras
             });
         })
         .catch(error => {
