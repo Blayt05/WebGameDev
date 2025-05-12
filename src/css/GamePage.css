@@ -1,87 +1,11 @@
-body {
-    margin: 0;
-    font-family: 'Sans-Serif', sans-serif;
-    background-color: #1e1c27;
-    color: white;
-  }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar {
-    width: 180px;
-    background-color: #3c3b5a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: space-evenly;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius:20px;
-    border-bottom-right-radius:20px;
-  }
-  
-  .perfil {
-    text-align: center;
-    margin-bottom: 30px;
-    color: white;
-  }
-  
-  .icono-perfil {
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle at center, #d04aff, #6b4dff);
-    border-radius: 50%;
-    margin: 0 auto 5px;
-  }
-  
-  /* .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  } */
-  
-  .menu-item {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .logout {
-    margin-bottom: 10px;
-    background-color: #f2f2ff;
-    color: #4a4a8a;
-    border: none;
-    border-radius: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 13px;
-    font-family: 'Sans-Serif', sans-serif;
-  }
-  
-  .main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px 30px;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/src/img/cooking.gif'); /* AQUI pones la ruta de tu GIF */
-    background-size: cover; /* Que ocupe todo el espacio disponible */
+  .imagen-fondo {
+    background-image: url(/src/img/Control.gif);
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-  }  
-  
+    width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  }
+       
   .titulo {
     font-size: 38px;
     margin: 0;
@@ -103,4 +27,6 @@ body {
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
-  }  
+  }
+
+
