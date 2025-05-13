@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        fetch('https://localhost:7141/api/Login', {  // Asegúrate que sea tu puerto correcto
+        fetch('https://localhost:7012/api/Login', {  // Asegúrate que sea tu puerto correcto
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(data => {
-            if (data.rol === 0) {
+            if (data.rol === 'admin') {
                 Swal.fire({
                     icon: 'success',
                     title: 'Welcome Admin!',
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }).then(() => {
                     window.location.href = "/homeAdmin.html";
                 });
-            } else if (data.rol === 1) {
+            } else if (data.rol === 'user') {
                 Swal.fire({
                     icon: 'success',
                     title: 'Welcome!',
