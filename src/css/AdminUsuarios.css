@@ -23,17 +23,27 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
 }
 
 .header-left h1 {
     font-size: 2em;
 }
 
+.header-left button{
+    width: 40px;
+}
+
 .header-right {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header-right button,

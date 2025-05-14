@@ -130,5 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    fetchUsuarios();
+    const usuarios = [
+        { id: 1, usuario: 'user1', nombre: 'Juan', apellido: 'Pérez' },
+        { id: 2, usuario: 'user2', nombre: 'Ana', apellido: 'García' },
+        { id: 3, usuario: 'user3', nombre: 'Luis', apellido: 'Martínez' },
+        { id: 4, usuario: 'user4', nombre: 'María', apellido: 'López' }
+    ];
+    //fetchUsuarios();
+    llenarTabla(usuarios);
 });
