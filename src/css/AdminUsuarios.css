@@ -37,6 +37,9 @@ header {
 }
 
 .header-left button{
+    color: white;
+    text-decoration: solid;
+    background-color: #6f4cff;
     width: 40px;
 }
 
@@ -58,11 +61,13 @@ header {
 .create-button {
     background-color: #6f4cff;
     color: white;
+    cursor: pointer;
 }
 
 .search-button {
     background-color: #4c3d9d;
     color: white;
+    cursor: pointer;
 }
 
 .search-input {
@@ -126,6 +131,7 @@ tr:hover {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    color: #333;
 }
 
 .panel-content input {
