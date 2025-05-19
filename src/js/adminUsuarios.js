@@ -1,16 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
     const apiUrl = 'https://localhost:7012/api/usuarios';
     const tableBody = document.querySelector('table tbody');
-    const panel = document.createElement('div'); // Panel para mostrar información del usuario
+    const panel = document.createElement('div');
     panel.classList.add('user-panel');
     document.body.appendChild(panel);
     document.querySelector('.create-button').addEventListener('click', crearUsuario);
+
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+
+    searchButton.addEventListener('click', searchByName);
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            searchByName();
+        }
+    });
 
     function fetchUsuarios() {
         fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Error al obtener los usuarios');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Could not load users',
+                        text: error.message
+                    });
                 }
                 return response.json();
             })
@@ -18,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 llenarTabla(data);
             })
             .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Could not load users',
+                    text: error.message
+                });
+
                 console.error('Error:', error);
             });
     }
@@ -98,6 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
         editButton.textContent = 'Guardar';
         deleteButton.disabled = true;
 
+        
+
 
         editButton.replaceWith(editButton.cloneNode(true)); // Reemplaza el botón para eliminar listeners
         const newEditButton = panel.querySelector('.edit-button');
@@ -112,7 +134,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }));
     }
 
+    function checkFields(){
+        const nombreInput = document.getElementById('nombre').value;
+        const apellidoInput = document.getElementById('apellido').value;
+        const gamerNameInput = document.getElementById('gamerName').value;
+        const emailInput = document.getElementById('email').value;
+        const passwordInput = document.getElementById('password').value;
+        const rolInput = document.getElementById('rol').value;
+        return !nombreInput || !apellidoInput || !gamerNameInput || !emailInput || !passwordInput || !rolInput
+    }
+
     function guardarNuevoUsuario(nuevoUsuario) {
+        if (checkFields) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Missing fields',
+                text: 'Please enter all fields.'
+            });
+            return;
+        }
         fetch(`${apiUrl}/register`, {
             method: 'POST',
             headers: {
@@ -167,6 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const newEditButton = panel.querySelector('.edit-button');
 
             newEditButton.addEventListener('click', () => {
+                if (checkFields) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Missing fields',
+                        text: 'Please enter all fields.'
+                    });
+                    return;
+                }
                 fetch(`${apiUrl}/${usuario.id}`, {
                     method: 'PUT',
                     headers: {
@@ -209,6 +257,29 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.error('Error:', error);
                 });
         }
+    }
+
+    function searchByName() {
+        const searchValue = searchInput.value.trim().toLowerCase();
+        if (!searchValue) {
+            fetchUsuarios();
+            return;
+        }
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const filtered = data.filter(usuario =>
+                    usuario.nombre && usuario.nombre.toLowerCase().includes(searchValue)
+                );
+                llenarTabla(filtered);
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo buscar usuarios.'
+                });
+            });
     }
 
     const usuarios = [
