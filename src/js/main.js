@@ -1,9 +1,10 @@
 // Función para cargar un componente HTML en un contenedor
-function loadComponent(containerId, componentPath) {
+function loadComponent(containerId, componentPath, callback) {
     fetch(componentPath)
         .then(response => response.text())
         .then(data => {
             document.getElementById(containerId).innerHTML = data;
+            if (callback) callback(); // Ejecuta el callback si existe
         })
         .catch(error => console.error(`Error al cargar el componente ${componentPath}:`, error));
 }
@@ -14,6 +15,6 @@ loadComponent('home-container', './src/home.html');
 loadComponent('aboutUs-container', './src/about.html');
 loadComponent('ourTeam-container', './src/OurTeam.html');
 loadComponent('Technologies-container', './src/Tecnologies.html');
-loadComponent('contactUs-container', './src/contacts.html');
+loadComponent('contactUs-container', './src/contacts.html', conectarFormularioContacto);
 loadComponent('footer-container', './src/components/footer.html');
 loadComponent('GamePage-container', './src/components/GamePageBar.html');
