@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+            }
             if (data.rol === 'admin') {
                 Swal.fire({
                     icon: 'success',

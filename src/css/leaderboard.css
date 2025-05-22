@@ -1,5 +1,7 @@
 .title {
   text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
   margin-bottom: 20px;
   font-size: 2rem;
   font-weight: bold;
@@ -81,10 +83,12 @@
 }
 
 .copyright {
+  padding-top: 5rem;
   margin-top: 20px;
   text-align: center;
   font-size: 0.8rem;
   color: #bbb;
+  padding-bottom: 2rem;
 }
 
 

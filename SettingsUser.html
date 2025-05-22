@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración de Perfil</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <div id="GamePage-container"></div> 
+    <div class="profile-settings-container">
+        <h2>Configuración de Perfil</h2>
+        <form class="profile-form">
+            <div class="profile-picture-section">
+                <img id="profile-img" src="https://via.placeholder.com/120" alt="Foto de perfil">
+                <input type="file" id="profile-pic-input" accept="image/*">
+                <label for="profile-pic-input" class="upload-btn">Cambiar foto</label>
+            </div>
+            <div class="form-group">
+                <label for="gamername">Gamer Name</label>
+                <input type="text" id="gamername" name="gamername" placeholder="Tu gamer name">
+            </div>
+            <div class="form-group">
+                <label for="current-password">Contraseña actual</label>
+                <input type="password" id="current-password" name="current-password" placeholder="Contraseña actual">
+            </div>
+            <button type="submit" class="save-btn">Guardar cambios</button>
+        </form>
+    </div>
+    <script src="/src/js/SettingsUser.js"></script>
+    <script src="/src/js/main.js"></script>
+</body>
+</html>
