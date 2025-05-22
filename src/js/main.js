@@ -15,6 +15,21 @@ loadComponent('home-container', './src/home.html');
 loadComponent('aboutUs-container', './src/about.html');
 loadComponent('ourTeam-container', './src/OurTeam.html');
 loadComponent('Technologies-container', './src/Tecnologies.html');
-loadComponent('contactUs-container', './src/contacts.html', conectarFormularioContacto);
+loadComponent('contactUs-container', './src/contacts.html');
+// Ejecutar la función cuando el contenido esté cargado
+const contactContainer = document.getElementById('contactUs-container');
+if (contactContainer) {
+    const observer = new MutationObserver((mutations, obs) => {
+        if (contactContainer.innerHTML.trim() !== '') {
+            if (typeof conectarFormularioContacto === 'function') {
+                conectarFormularioContacto();
+            }
+            obs.disconnect();
+        }
+    });
+    observer.observe(contactContainer, { childList: true });
+}
 loadComponent('footer-container', './src/components/footer.html');
 loadComponent('GamePage-container', './src/components/GamePageBar.html');
+
+
