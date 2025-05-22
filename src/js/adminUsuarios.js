@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     alert('Usuario eliminado con éxito');
                     cerrarPanel();
-                    fetchUsuarios(); // Actualiza la tabla
+                    fetchUsuarios();
                 })
                 .catch(error => {
                     console.error('Error:', error);
