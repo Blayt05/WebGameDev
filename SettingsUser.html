@@ -20,8 +20,11 @@
                 <input type="text" id="gamername" name="gamername" placeholder="Tu gamer name">
             </div>
             <div class="form-group">
-                <label for="current-password">Contraseña actual</label>
-                <input type="password" id="current-password" name="current-password" placeholder="Contraseña actual">
+                <label for="current-password">Contraseña actual (cambiar y guardar si se desea modificar)</label>
+                <div class="password-wrapper"> 
+                    <input type="password" id="current-password" name="current-password" placeholder="Contraseña actual">
+                    <button type="button" id="toggle-password" tabindex="-1" class="ojo">👁️</button>
+                </div>
             </div>
             <button type="submit" class="save-btn">Guardar cambios</button>
         </form>

@@ -2,6 +2,36 @@ async function cargarScoreboard() {
     try {
         const response = await fetch('https://localhost:5001/api/scoreboard');
         const data = await response.json();
+        const podiumIds = [
+            { div: ".podium-member2", idx: 0 }, // 1er lugar
+            { div: ".podium-member1", idx: 1 }, // 2do lugar
+            { div: ".podium-member3", idx: 2 }  // 3er lugar
+        ];
+
+        podiumIds.forEach((p, i) => {
+            const member = data[p.idx];
+            if (member && member.imagen) {
+                const podiumDiv = document.querySelector(p.div);
+                if (podiumDiv) {
+                    const img = podiumDiv.querySelector("img");
+                    img.src = `data:image/jpeg;base64,${member.imagen}`;
+                    img.alt = member.nombre;
+                    // Cambiar el nombre, puntos y agregar badge de posición
+                    const nameDiv = podiumDiv.querySelector("div");
+                    if (nameDiv) {
+                        let positionText = "";
+                        if (i === 0) positionText = "🥇 1er Lugar";
+                        else if (i === 1) positionText = "🥈 2do Lugar";
+                        else if (i === 2) positionText = "🥉 3er Lugar";
+                        nameDiv.innerHTML = `
+                            <strong>${member.nombre}</strong><br>
+                            <small>${member.puntos} pts</small>
+                            <div class="podium-badge">${positionText}</div>
+                        `;
+                    }
+                }
+            }
+        });
 
         // Generar la tabla
         let html = `

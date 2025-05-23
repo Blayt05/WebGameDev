@@ -2,8 +2,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".profile-form");
   const profilePicInput = document.getElementById("profile-pic-input");
   const profileImg = document.getElementById("profile-img");
+  const gamerNameInput = document.getElementById("gamername");
+  const passwordInput = document.getElementById("current-password");
+  const togglePasswordBtn = document.getElementById("toggle-password");
+
 
   let base64Image = "";
+
+  // Cargar datos actuales del usuario
+  async function cargarDatosUsuario() {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await fetch("https://localhost:5001/api/settingsUser/me", {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      if (!response.ok) throw new Error("No se pudieron cargar los datos.");
+      const data = await response.json();
+      if (data.gamerName) gamerNameInput.value = data.gamerName;
+      // No mostrar la contraseña por seguridad, pero puedes dejar el campo vacío
+      if (data.imagen) {
+        profileImg.src = `data:image/jpeg;base64,${data.imagen}`;
+        base64Image = data.imagen;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  cargarDatosUsuario();
 
   // Convertir imagen a base64 cuando se selecciona
   profilePicInput.addEventListener("change", async (event) => {
@@ -11,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (file) {
       base64Image = await toBase64(file);
       profileImg.src = URL.createObjectURL(file); // Mostrar imagen cargada
+    }
+  });
+
+  // Mostrar/ocultar contraseña
+  togglePasswordBtn.addEventListener("click", () => {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      togglePasswordBtn.textContent = "🙈";
+    } else {
+      passwordInput.type = "password";
+      togglePasswordBtn.textContent = "👁️";
     }
   });
 
